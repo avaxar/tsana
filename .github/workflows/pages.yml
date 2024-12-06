@@ -1,0 +1,89 @@
+name: Deployment over GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "README.md"
+      - "LICENSE.md"
+
+    workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      # - name: Install Rust
+      #   run: |
+      #     rustup set profile minimal
+      #     rustup toolchain install stable
+      #     rustup default stable
+
+      - name: Cache Rust binaries
+        id: cache-rust
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/bin/*
+          # This key must be changed every time a new Rust binary is added.
+          key: ${{runner.os}}-rust
+
+      - name: Install mdbook
+        run: |
+          mkdir bin
+          echo "$(pwd)/bin" >> $GITHUB_PATH
+
+          tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
+          url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -sSL $url | tar -xz --directory=bin
+          chmod +x bin/mdbook
+
+      - name: Install mdbook-linkcheck
+        run: |
+          tag=$(curl 'https://api.github.com/repos/Michael-F-Bryan/mdbook-linkcheck/releases/latest' | jq -r '.tag_name')
+          url="https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/${tag}/mdbook-linkcheck.x86_64-unknown-linux-gnu.zip"
+          curl -sSL $url -o bin/mdbook-linkcheck.zip
+          unzip -q bin/mdbook-linkcheck.zip -d bin
+          chmod +x bin/mdbook-linkcheck
+
+      - name: Install mdbook-regex-replacer
+        if: steps.cache-rust.outputs.cache-hit != 'true'
+        uses: actions-rs/install@v0.1
+        with:
+          crate: mdbook-regex-replacer
+          version: latest
+          use-tool-cache: true
+
+      - name: Build book
+        run: |
+          mdbook build
+          mv book/html _site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

@@ -1,0 +1,7 @@
+book/
+
+# Couple of IDEs' temporary/cache directory
+*~
+*.swp
+.vs/
+.vscode/

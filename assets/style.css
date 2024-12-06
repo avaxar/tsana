@@ -1,0 +1,28 @@
+summary {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+.tsana-hint {
+    text-decoration: underline dotted;
+    text-decoration-color: rgba(128, 128, 128, 0.5);
+    transition: text-decoration-color 0.25s ease;
+}
+
+.tsana-hint:hover {
+    text-decoration-color: currentColor;
+}
+
+/* .tsana-tooltip {
+} */
+
+/* .tsana-hint:hover + .tsana-tooltip {
+} */

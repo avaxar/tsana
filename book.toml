@@ -1,0 +1,37 @@
+[book]
+title = "Talı Tsanan | The Tsana Language"
+description = "Reference grammar of the constructed logical language—Tsana."
+language = "en"
+authors = ["Avaxar"]
+
+[output.html]
+smart-punctuation = true
+mathjax-support = true
+git-repository-url = "https://github.com/avaxar/tsana"
+site-url = "https://tsana.avaxar.dev"
+additional-css = ["assets/style.css"]
+additional-js = ["assets/script.js"]
+
+[output.html.print]
+enable = false
+
+[output.linkcheck]
+# ...
+
+[preprocessor.regex-replacer]
+command="mdbook-regex-replacer"
+
+# Marks ?{...} for translation spoiler blocks
+[[preprocessor.regex-replacer.items]]
+regex="\\?\\{(?<content>[^{}]*(?:\\([^()]*\\))?[^{}]*)\\}"
+rep="<p><details><summary><b>Translation</b></summary><blockquote><p>${content}</p></blockquote></details></p>"
+
+# Marks @{...} for Tsana words in the Latin script
+[[preprocessor.regex-replacer.items]]
+regex="\\@\\{(?<content>[^{}]*(?:\\([^()]*\\))?[^{}]*)\\}"
+rep="<span class='tsana-hint' onmouseover='this.title = this.textContent.toLowerCase() + \" (We are useless right now)\"'>${content}</span>"
+
+# Marks {...|...} for Ruby/Furigana-like annotations
+[[preprocessor.regex-replacer.items]]
+regex="\\{(?P<text>[^|{}]+)\\|(?P<annotation>[^|{}]+)\\}"
+rep="<ruby>${text}<rp>(</rp><rt>${annotation}</rt><rp>)</rp></ruby>"
