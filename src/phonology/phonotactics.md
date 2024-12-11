@@ -1,6 +1,6 @@
 # Phonotactics
 
-Superficially, Tsana has a `(C)V(C)` syllable structure. The final `(C)` can either be a nasal, a liquid, or an /s/; and thus, it is more accurately represented as `(C)V(N|L|/s/)`.
+Superficially, Tsana has a `(C)V(C)` syllable structure. The final `(C)` may either be a nasal, a liquid, or an /s/; and thus, it is more accurately represented as `(C)V(N|L|/s/)`.
 
 | (C)            | V                           | (N\|L\|/s/)   |
 | :------------: | :-------------------------: | :-----------: |

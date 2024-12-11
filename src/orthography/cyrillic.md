@@ -24,7 +24,7 @@ The consonants in the table are ordered as per the native consonant order of Tsa
 | **Ӎ ӎ** | **Ӊ ӊ** |         | **Х х** |
 |   /m̥/   |   /n̥/   |         |   /h/   |
 
-The glottal stop /ʔ/ does not need to be written, as it can only happen word-initially where the first syllable starts with a vowel (e.g. "ана" for /ʔana/) or a syllabic nasal consonant (e.g. "ммм..." for /ʔmː/). On a similar note, spaces may not be omitted due to their role in separating words when pitch accent as a means of word-segregation is nonexistent.
+The glottal stop /ʔ/ does not need to be written, as it may only happen word-initially where the first syllable starts with a vowel (e.g. "ана" for /ʔana/) or a syllabic nasal consonant (e.g. "ммм..." for /ʔmː/). On a similar note, spaces may not be omitted due to their role in separating words when pitch accent as a means of word-segregation is nonexistent.
 
 ## Vowels
 

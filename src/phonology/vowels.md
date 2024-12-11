@@ -9,7 +9,7 @@
 
 ## Implicit Nasalization
 
-When ⟨a⟩, ⟨e⟩, and ⟨o⟩ are followed with a nasal vowel (e.g. ⟨m⟩, ⟨n⟩, or ⟨q⟩), they can be implicitly nasalized into \[ɑ̃\], \[ẽ̞\], and \[õ̞\] respectively as allophones without the need to reflect the shift in broad transcription nor the orthography. As a result, ⟨an⟩ & ⟨ãn⟩, ⟨en⟩ & ⟨ẽn⟩, and ⟨on⟩ & ⟨õn⟩ may not be phonemically distinguished.
+When ⟨a⟩, ⟨e⟩, and ⟨o⟩ are followed with a nasal vowel (e.g. ⟨m⟩, ⟨n⟩, or ⟨q⟩), they may be implicitly nasalized into \[ɑ̃\], \[ẽ̞\], and \[õ̞\] respectively as allophones without the need to reflect the shift in broad transcription nor the orthography. As a result, ⟨an⟩ & ⟨ãn⟩, ⟨en⟩ & ⟨ẽn⟩, and ⟨on⟩ & ⟨õn⟩ may not be phonemically distinguished.
 
 ## Consecutives
 
@@ -28,4 +28,4 @@ Although the table above represents the "standard" pronunciation of the language
 - /ei̯/ is considered an allophone of ⟨é⟩ /e.e/.
 - /ou̯/ is considered an allophone of ⟨ó⟩ /o.o/.
 - It is acceptable to break diphthongs up into two syllables.
-- Using the vowel lengthened /aː/, /eː/, /oː/, /iː/, /uː/ for ⟨á⟩, ⟨é⟩, ⟨ó⟩, ⟨í⟩, ⟨ú⟩ respectively is acceptable for mediums like poetry and songs.
+- Using the vowel lengthened /aː/, /eː/, /oː/, /iː/, /uː/ for ⟨á⟩, ⟨é⟩, ⟨ó⟩, ⟨í⟩, ⟨ú⟩ respectively is acceptable for artistic mediums like poetry and songs.
